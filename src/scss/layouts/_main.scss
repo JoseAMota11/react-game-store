@@ -2,8 +2,22 @@
 @use '../abstracts/mixins';
 
 .main {
-  width: variables.$container-width-1;
   @include mixins.flexbox;
-  height: 500px;
-  background-color: black;
+}
+
+.grid {
+  width: variables.$container-width-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  @include mixins.flexbox;
+  background-color: #333;
+
+  &__image {
+    width: 100%;
+    object-fit: scale-down;
+    height: 80%;
+  }
 }
