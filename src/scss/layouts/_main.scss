@@ -1,0 +1,9 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.main {
+  width: variables.$container-width-1;
+  @include mixins.flexbox;
+  height: 500px;
+  background-color: black;
+}
