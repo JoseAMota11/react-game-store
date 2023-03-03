@@ -1,4 +1,4 @@
-/* abstracts */ 
+/* abstracts */
 @use './scss/abstracts/variables';
 @use './scss/abstracts/mixins';
 
@@ -10,3 +10,4 @@
 @use './scss/layouts/main';
 
 /* modules */
+@use './scss/modules/card';
