@@ -1,5 +1,31 @@
-@mixin flexbox {
+@mixin flexbox($direction, $justify, $align) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($columns, $rows: none) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
   align-items: center;
+}
+
+@mixin grid-items($column-1, $column-2) {
+  grid-column: $column-1 span $column-2;
+  align-items: center;
+}
+
+@mixin icon {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
 }

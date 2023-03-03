@@ -1,14 +1,5 @@
-@use '../abstracts/variables';
 @use '../abstracts/mixins';
 
 .main {
-  @include mixins.flexbox;
-  background-color: #333;
-}
-
-.grid {
-  width: variables.$container-width-1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
+  @include mixins.flexbox(column, flex-start, center);
 }

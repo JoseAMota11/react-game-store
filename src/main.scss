@@ -8,6 +8,8 @@
 
 /* layout */
 @use './scss/layouts/main';
+@use './scss/layouts/grid';
+@use './scss/layouts/navbar';
 
 /* modules */
 @use './scss/modules/card';

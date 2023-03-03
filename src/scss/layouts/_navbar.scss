@@ -1,0 +1,45 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.navbar {
+  @include mixins.flexbox(unset, center, center);
+
+  .list {
+    @include mixins.grid(repeat(6, 1fr));
+    width: variables.$container-width-2;
+    padding: 1rem 0;
+
+    .list-1 {
+      @include mixins.grid-items(1, 2);
+    }
+
+    .list-2 {
+      @include mixins.grid-items(2, 3);
+
+      .list__btn--back {
+        .list__icon--left {
+          @include mixins.icon;
+        }
+      }
+
+      .list__btn--next {
+        .list__icon--right {
+          @include mixins.icon;
+        }
+      }
+    }
+
+    .list-3 {
+      @include mixins.grid-items(4, -1);
+
+      .list__search-input {
+        border: none;
+        height: 3rem;
+        width: 100%;
+        box-shadow: variables.$box-shadow;
+        border-radius: 0.4rem;
+        text-indent: 0.4rem;
+      }
+    }
+  }
+}
