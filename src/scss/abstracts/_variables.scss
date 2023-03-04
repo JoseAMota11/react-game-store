@@ -4,4 +4,9 @@ $container-width-1: 800px;
 $container-width-2: 700px;
 $container-width-3: 600px;
 $container-width-4: 500px;
-$box-shadow: 0 0 4rem rgba($color: #000, $alpha: 0.3);
+$box-shadow: 0 0 4rem
+  rgba(
+    $color: #000,
+    $alpha: 0.3,
+  );
+$icon-size: 28px;

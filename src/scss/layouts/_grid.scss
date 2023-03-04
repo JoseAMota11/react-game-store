@@ -6,4 +6,9 @@
   grid-template-columns: repeat(3, 32%);
   justify-content: space-between;
   gap: 0.6rem;
+
+  &__loading {
+    grid-column: 2 / 3;
+    justify-self: center;
+  }
 }

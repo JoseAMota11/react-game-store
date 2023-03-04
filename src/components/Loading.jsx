@@ -1,3 +1,3 @@
 export const Loading = () => {
-  return <span>Loading...</span>;
+  return <span className='grid__loading'>Loading...</span>;
 };
