@@ -18,6 +18,7 @@ export const Navbar = () => {
             className='list__icon--right'
             src={rightIcon}
             alt='Right arrow icon'
+            fill='yellow'
           />
         </li>
       </ul>

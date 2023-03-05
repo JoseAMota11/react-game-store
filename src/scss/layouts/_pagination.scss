@@ -1,0 +1,11 @@
+@use '../abstracts/variables';
+@use '../modules/button';
+
+.pagination {
+  width: variables.$container-width-2;
+  padding: 2rem 0;
+
+  &__btn {
+    @include button.button;
+  }
+}

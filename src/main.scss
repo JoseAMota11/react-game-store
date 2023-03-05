@@ -10,6 +10,10 @@
 @use './scss/layouts/main';
 @use './scss/layouts/grid';
 @use './scss/layouts/navbar';
+@use './scss/layouts/pagination';
+@use './scss/layouts/singlePage';
 
 /* modules */
 @use './scss/modules/card';
+@use './scss/modules/button';
+@use './scss/modules/comment';

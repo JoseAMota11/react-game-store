@@ -1,0 +1,44 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.container {
+  @include mixins.flexbox(column, flex-start, center);
+
+  .single-page {
+    width: variables.$container-width-2;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    &__name {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    &__image {
+      width: 100%;
+      grid-row: 2 / -1;
+      border-radius: variables.$border-radius-2;
+      box-shadow: variables.$box-shadow;
+    }
+
+    &__description {
+      text-align: justify;
+    }
+
+    &__comment {
+      .comment__container {
+        background-color: rgba($color: #777, $alpha: 0.2);
+        border-radius: variables.$border-radius-2;
+        margin-bottom: 0.6rem;
+        padding: 0.1rem;
+
+        .user {
+          font-weight: 500;
+          font-size: 1.06rem;
+        }
+      }
+    }
+  }
+}

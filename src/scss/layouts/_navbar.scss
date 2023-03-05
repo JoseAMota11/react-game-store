@@ -19,6 +19,7 @@
 
       .list__icon--left {
         @include mixins.icon;
+        fill: #f33;
       }
 
       .list__icon--right {
