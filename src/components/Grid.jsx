@@ -4,12 +4,11 @@ import { Loading } from './Loading';
 import { Card } from './Card';
 import { SinglePage } from './SinglePage';
 
-export const Grid = () => {
+export const Grid = ({ singlePage, setSinglePage }) => {
   const [data, setData] = useState([]);
   const [singleData, setSingleData] = useState([]);
   const [id, setId] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [singlePage, setSinglePage] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);  
 
   useEffect(() => {
     (async function () {

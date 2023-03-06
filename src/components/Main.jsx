@@ -1,9 +1,9 @@
 import { Grid } from './Grid';
 
-export const Main = () => {
+export const Main = ({ singlePage, setSinglePage }) => {
   return (
     <main className='main'>
-      <Grid />
+      <Grid singlePage={singlePage} setSinglePage={setSinglePage} />
     </main>
   );
 };

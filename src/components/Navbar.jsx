@@ -1,7 +1,6 @@
-import rightIcon from '../assets/rightIcon.svg';
 import leftIcon from '../assets/leftIcon.svg';
 
-export const Navbar = () => {
+export const Navbar = ({ setSinglePage }) => {
   return (
     <nav className='navbar'>
       <ul className='list'>
@@ -13,12 +12,7 @@ export const Navbar = () => {
             className='list__icon--left'
             src={leftIcon}
             alt='Left arrow icon'
-          />
-          <img
-            className='list__icon--right'
-            src={rightIcon}
-            alt='Right arrow icon'
-            fill='yellow'
+            onClick={() => setSinglePage(false)}
           />
         </li>
       </ul>

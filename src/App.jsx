@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { Main } from './components/Main';
 import { Navbar } from './components/Navbar';
 
 function App() {
+  const [singlePage, setSinglePage] = useState(false);
+
   return (
     <>
-      <Navbar />
-      <Main />
+      <Navbar setSinglePage={setSinglePage} />
+      <Main singlePage={singlePage} setSinglePage={setSinglePage} />
     </>
   );
 }
