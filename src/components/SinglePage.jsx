@@ -1,6 +1,6 @@
 import { Comment } from './Comment';
 
-export const SinglePage = ({ singleData }) => {
+export const SinglePage = ({ singleData, setId }) => {
   const { name, image, description, comments } = singleData;
 
   return (

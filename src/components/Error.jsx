@@ -1,3 +1,3 @@
-export const Error = () => {
-  return <span className='error'>Error</span>;
+export const Error = ({ error }) => {
+  return <span className='error'>{error}</span>;
 };

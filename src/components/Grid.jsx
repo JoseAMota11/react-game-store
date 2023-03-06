@@ -8,7 +8,8 @@ export const Grid = ({ singlePage, setSinglePage }) => {
   const [data, setData] = useState([]);
   const [singleData, setSingleData] = useState([]);
   const [id, setId] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);  
+  const [currentPage, setCurrentPage] = useState(1);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async function () {
@@ -16,8 +17,8 @@ export const Grid = ({ singlePage, setSinglePage }) => {
         const gottenData = await fetchData(currentPage);
 
         setData(gottenData);
-      } catch (error) {
-        console.error(error);
+      } catch (e) {
+        setError('Error: That post is deleted or does not exit.');
       }
     })();
   }, []);
@@ -30,12 +31,16 @@ export const Grid = ({ singlePage, setSinglePage }) => {
           setSingleData(fetchedData);
 
           setSinglePage(true);
-        } catch (error) {
-          console.error(error);
+        } catch (e) {
+          setError(
+            'Error: It maybe an internet connection issue. Refresh the page or come back later.'
+          );
         }
       })();
     }
   }, [id]);
+
+  useEffect(() => setId(null), [singlePage]);
 
   if (singlePage)
     return (
@@ -43,6 +48,10 @@ export const Grid = ({ singlePage, setSinglePage }) => {
         <SinglePage singleData={singleData} />
       </div>
     );
+
+  if (error) {
+    return <Error error={error} />;
+  }
 
   return (
     <>

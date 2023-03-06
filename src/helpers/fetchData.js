@@ -6,6 +6,6 @@ export const fetchData = async (page = '', id = '') => {
     const dataToJSON = await fetchedData.json();
     return dataToJSON;
   } catch (error) {
-    /* Error handler coming soon */
+    console.error(error);
   }
 };
