@@ -1,6 +1,6 @@
 import { Comment } from './Comment';
 
-export const SinglePage = ({ singleData, setId }) => {
+export const SinglePage = ({ singleData }) => {
   const { name, image, description, comments } = singleData;
 
   return (
@@ -10,6 +10,7 @@ export const SinglePage = ({ singleData, setId }) => {
       <div>
         <h3>Description</h3>
         <p className='single-page__description'>{description}</p>
+        {!description && <span>No description</span>}
       </div>
       <Comment comments={comments} />
     </div>

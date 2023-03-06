@@ -1,6 +1,11 @@
 @mixin button {
-  width: 60px;
-  height: 3rem;
+  width: 80px;
+  height: 2.6rem;
   font-size: 1rem;
-  background-color: rgba($color: #00b4d8, $alpha: 1);
+}
+
+@mixin button-2 {
+  width: 40px;
+  height: 2.6rem;
+  font-size: 1rem;
 }

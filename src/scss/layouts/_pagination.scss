@@ -1,11 +1,18 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins';
 @use '../modules/button';
 
 .pagination {
+  @include mixins.flexbox(row, center, center);
+  gap: 1rem;
   width: variables.$container-width-2;
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   &__btn {
     @include button.button;
+  }
+
+  &__btn-2 {
+    @include button.button-2;
   }
 }
