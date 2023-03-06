@@ -29,6 +29,7 @@
 
     &__comment {
       .comment__container {
+        max-width: 20rem;
         background-color: rgba($color: #777, $alpha: 0.2);
         border-radius: variables.$border-radius-2;
         margin-bottom: 0.6rem;
@@ -40,5 +41,39 @@
         }
       }
     }
+
+    @media (max-width: variables.$breakpoint-bigger) {
+      width: 100%;
+      grid-template-rows: repeat(1, 1fr);
+      grid-template-columns: unset;
+
+      &__name {
+        justify-self: start;
+      }
+
+      &__image {
+        grid-column: 1 / -1;
+      }
+
+      &__comment {
+        .comment__container {
+          padding: 0.3rem;
+
+          .user {
+            font-weight: 500;
+            font-size: 1.06rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: variables.$breakpoint-bigger) {
+    width: variables.$container-width-2;
+    padding: 1rem;
+  }
+
+  @media (max-width: variables.$breakpoint-big) {
+    width: 100%;
   }
 }

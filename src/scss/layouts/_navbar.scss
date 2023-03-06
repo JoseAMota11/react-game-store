@@ -26,5 +26,21 @@
         @include mixins.icon;
       }
     }
+
+    @media (max-width: variables.$breakpoint-big) {
+      @include mixins.grid(repeat(2, 1fr));
+      width: 100%;
+      padding: 1rem;
+
+      .list-1 {
+        .list__title {
+          font-size: 1.2rem;
+        }
+      }
+
+      .list-2 {
+        grid-column: 2 / -1;
+      }
+    }
   }
 }
