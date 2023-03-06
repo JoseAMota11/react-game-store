@@ -7,7 +7,10 @@ export const SinglePage = ({ singleData, setId }) => {
     <div className='single-page'>
       <h3 className='single-page__name'>{name}</h3>
       <img className='single-page__image' src={image} alt={name} />
-      <p className='single-page__description'>{description}</p>
+      <div>
+        <h3>Description</h3>
+        <p className='single-page__description'>{description}</p>
+      </div>
       <Comment comments={comments} />
     </div>
   );

@@ -42,7 +42,7 @@
       }
     }
 
-    @media (max-width: variables.$breakpoint-bigger) {
+    @media (max-width: variables.$breakpoint-big) {
       width: 100%;
       grid-template-rows: repeat(1, 1fr);
       grid-template-columns: unset;

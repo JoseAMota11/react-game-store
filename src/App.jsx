@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Navbar setSinglePage={setSinglePage} />
+      <Navbar setSinglePage={setSinglePage} singlePage={singlePage} />
       <Main singlePage={singlePage} setSinglePage={setSinglePage} />
     </>
   );
