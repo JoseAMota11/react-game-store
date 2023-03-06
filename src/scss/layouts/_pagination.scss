@@ -4,15 +4,36 @@
 
 .pagination {
   @include mixins.flexbox(row, center, center);
-  gap: 1rem;
-  width: variables.$container-width-2;
-  padding: 1rem 0;
 
-  &__btn {
-    @include button.button;
+  &__container {
+    @include mixins.flexbox(row, center, center);
+    gap: 1rem;
+    width: variables.$container-width-2;
+    padding: 1rem;
+
+    .btn {
+      @include button.button;
+    }
+
+    .btn--inactive {
+      @include button.button-2;
+    }
+
+    .btn--active {
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      color: #00b4d8;
+      border: #00b4d8 solid 1px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: variables.$breakpoint-medium) {
+      @include mixins.flexbox(row, space-between, center);
+    }
   }
 
-  &__btn-2 {
-    @include button.button-2;
+  @media (max-width: variables.$breakpoint-big) {
+    width: 100%;
   }
 }

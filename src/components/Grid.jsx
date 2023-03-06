@@ -61,12 +61,14 @@ export const Grid = ({ singlePage, setSinglePage }) => {
       <section className='grid'>
         {data?.length > 0 ? <Card data={data} setId={setId} /> : <Loading />}
       </section>
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        dataLength={dataLength}
-        postPerPage={postPerPage}
-      />
+      <section className='pagination'>
+        <Pagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          dataLength={dataLength}
+          postPerPage={postPerPage}
+        />
+      </section>
     </>
   );
 };

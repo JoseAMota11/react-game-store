@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+
 @mixin button {
   width: 80px;
   height: 2.6rem;
@@ -6,6 +8,17 @@
 
 @mixin button-2 {
   width: 40px;
-  height: 2.6rem;
+  height: 40px;
+  background-color: #00b4d8;
+  border: 1px solid transparent;
+  color: #fff;
+  box-shadow: variables.$box-shadow;
+  border-radius: 50%;
   font-size: 1rem;
+  cursor: pointer;
+
+    
+  @media (max-width: variables.$breakpoint-medium) {
+    display: none;;
+  }
 }

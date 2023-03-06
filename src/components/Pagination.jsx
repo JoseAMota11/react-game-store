@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 
 export const Pagination = ({
   currentPage,
@@ -6,45 +6,59 @@ export const Pagination = ({
   dataLength,
   postPerPage,
 }) => {
+  const [toggle, setToggle] = useState({
+    activeObject: null,
+    objects: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+  });
   const lastPage = Math.ceil(dataLength / postPerPage);
-  let buttonsNumber = [];
+
+  const toggleActive = (index) => {
+    setToggle({ ...toggle, activeObject: toggle.objects[index] });
+  };
+
+  const toggleActiveStyles = (index) => {
+    if (toggle.objects[index] === toggle.activeObject) {
+      return 'btn--active';
+    } else {
+      return 'btn--inactive';
+    }
+  };
 
   const previousPage = () => {
     setCurrentPage(currentPage - 1);
+    toggleActive(currentPage - 1);
   };
 
   const takeMeToPage = (page) => {
     setCurrentPage((currentPage = page));
+    toggleActive(page);
   };
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
+    toggleActive(currentPage + 1);
   };
 
-  for (let i = 1; i <= lastPage; i++) {
-    buttonsNumber.push(i);
-  }
-
   return (
-    <div className='pagination'>
+    <div className='pagination__container'>
       <button
-        className='pagination__btn'
+        className='btn'
         onClick={previousPage}
         disabled={currentPage === 1}
       >
         Previous
       </button>
-      {buttonsNumber.map((button) => (
+      {toggle.objects.map(({ id }) => (
         <button
-          key={button}
-          className='pagination__btn-2'
-          onClick={() => takeMeToPage(button)}
+          key={id}
+          className={toggleActiveStyles(id)}
+          onClick={() => takeMeToPage(id)}
         >
-          {button}
+          {id}
         </button>
       ))}
       <button
-        className='pagination__btn'
+        className='btn'
         onClick={nextPage}
         disabled={currentPage === lastPage}
       >
