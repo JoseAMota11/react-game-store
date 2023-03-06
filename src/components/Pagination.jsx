@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const Pagination = ({
   currentPage,
@@ -10,11 +10,16 @@ export const Pagination = ({
     activeObject: null,
     objects: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
   });
+  const ref = useRef();
   const lastPage = Math.ceil(dataLength / postPerPage);
 
   const toggleActive = (index) => {
     setToggle({ ...toggle, activeObject: toggle.objects[index] });
   };
+
+  useEffect(() => {
+    ref.current.children.item(1).click();
+  }, []);
 
   const toggleActiveStyles = (index) => {
     if (toggle.objects[index] === toggle.activeObject) {
@@ -40,7 +45,7 @@ export const Pagination = ({
   };
 
   return (
-    <div className='pagination__container'>
+    <div className='pagination__container' ref={ref}>
       <button
         className='btn'
         onClick={previousPage}
@@ -53,6 +58,7 @@ export const Pagination = ({
           key={id}
           className={toggleActiveStyles(id)}
           onClick={() => takeMeToPage(id)}
+          id={id}
         >
           {id}
         </button>
