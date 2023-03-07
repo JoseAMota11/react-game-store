@@ -1,0 +1,11 @@
+@use '../abstracts/mixins';
+
+.footer {
+  @include mixins.flexbox(column, center, center);
+  padding: 2rem 0;
+
+  &__item {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
