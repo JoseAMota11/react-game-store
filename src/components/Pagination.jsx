@@ -17,9 +17,9 @@ export const Pagination = ({
     setToggle({ ...toggle, activeObject: toggle.objects[index] });
   };
 
-  useEffect(() => {
-    ref.current.children.item(1).click();
-  }, []);
+  // useEffect(() => {
+  //   ref.current.children.item(1).click();
+  // }, []);
 
   const toggleActiveStyles = (index) => {
     if (toggle.objects[index] === toggle.activeObject) {
