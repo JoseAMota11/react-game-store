@@ -2,23 +2,30 @@
 
 @mixin button {
   width: 80px;
-  height: 2.6rem;
+  height: 100%;
   font-size: 1rem;
+
+  &:hover:enabled {
+    background-color: #00000011;
+  }
+  
+  &:hover:active {
+    background-color: #00000011;
+  }
 }
 
 @mixin button-2 {
-  width: 40px;
-  height: 40px;
-  background-color: #00b4d8;
+  width: 3.4rem;
+  height: 100%;
   border: 1px solid transparent;
-  color: #fff;
-  box-shadow: variables.$box-shadow;
-  border-radius: 50%;
   font-size: 1rem;
   cursor: pointer;
 
-    
+  &:hover:enabled {
+    background-color: #00000011;
+  }
+
   @media (max-width: variables.$breakpoint-medium) {
-    display: none;;
+    display: none;
   }
 }
